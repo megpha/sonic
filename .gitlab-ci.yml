@@ -1,0 +1,12 @@
+image: maven:3.2-jdk-8
+variables:
+  USERNAME: waitforvisible
+  ACCESS_KEY: 1c352c9a-036d-49ee-a066-9994a25eb629
+  REMOTE: 'true'
+  BASE_URL: 'http://104.131.19.117/AutoSpecs/login'
+test:
+  script: mvn --quiet test
+  artifacts:
+    untracked: true
+    paths:
+      - test-output/surefire-reports/
